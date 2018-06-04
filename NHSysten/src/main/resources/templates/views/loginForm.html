@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}"
+	>	
+	
+<head>
+<meta charset="UTF-8">
+<title>Register Form</title>
+</head>
+<body>
+	<div layout:fragment="content" class="container mySpace">
+	<div class="alert alert-dismissible alert-danger" th:if="${param.error}">
+	<p class="text text-center"> 
+		
+		<h2> Invalid Email or Password </h2>
+	</p>
+	</div>
+		<form th:action="@{/login}"  method="post">
+		
+		<div class="form-group">
+		<label for="email" class="form-control-label" >Email</label>
+		<input type="text" name ="username" id="email" class="form-control" />
+
+		</div>
+		
+		<div class="form-group">
+		<label for="password" class="form-control-label" >Password</label>
+		<input name="password" type="password" id="password" class="form-control"/>
+
+		</div>
+		
+		<input type="submit" value="Submit" class="btn btn-primary" />
+		
+		</form>
+	</div>
+
+</body>
+</html>
